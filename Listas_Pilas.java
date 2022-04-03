@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Listas_Pilas {
     Scanner in = new Scanner(System.in);
     ListasPila lista = new ListasPila();
+    public static  String variable,palabra;
     
- 
     public static void main(String[] args) {
         
         Listas_Pilas list = new Listas_Pilas();
@@ -28,9 +28,7 @@ public class Listas_Pilas {
                     + "7.Mostrar\n"
                     + "8.introvertir\n"
                     + "9.Exit\n");
-                  
-            
-            
+                              
             System.out.println("Please select an option");
 
             opcion = in.nextInt();
@@ -102,24 +100,23 @@ public class Listas_Pilas {
     }
         
     public void add(){
-        String elemento;    
+           
         System.out.println("Ingresar un elemento a la pila");
-        elemento = in.next();
-        lista.push(elemento);
+        variable =in.next();
+        for (char c:variable.toCharArray()) {
+            System.out.println(c);
+            lista.push(c);
+            
+        }       
     }
     
     public void introvertir(){
-    System.out.println("Ingrese una de palabra de su pila para ser introvertida");
-        String elemento=in.next();
-		// Esta será la cadena invertida, primero está vacía
-        String invertida = "";
-        // Recorremos la original del final al inicio
-        for (int indice = elemento.length() - 1; indice >= 0; indice--) {
-                // Y vamos concatenando cada carácter a la nueva cadena
-            invertida += elemento.charAt(indice);
+        
+        while (!lista.estavacia()) {
+            System.out.println(lista.sacar()); 
+                
         }
-        System.out.println("Original word: " + elemento);
-        System.out.println("introvert word: " + invertida);
+        System.out.println(palabra);
     }
 }
 
