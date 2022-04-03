@@ -10,13 +10,14 @@ package Listas_pilas;
  * @author Raguex
  */
 public class Nodo {
-    String dato;
+    char dato;
     Nodo siguiente;
     
-    public Nodo(String dato){
+    public Nodo(char dato){
         this.dato = dato;
         siguiente = null;
     
     }
     
 }
+
